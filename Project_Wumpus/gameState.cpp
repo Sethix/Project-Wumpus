@@ -246,9 +246,13 @@ void GameState::GameScreen()
 			std::cout << "You were brought back to the start by a bat!" << std::endl;
 		}
 
-		std::cout << std::endl << "Turn: "				<< turn					<< std::endl <<
-								  "Arrows: "			<< player.GetArrows()	<< std::endl <<
-					              "Current location: "	<< player.GetLoc()		<< std::endl;
+		std::cout << std::endl   << 
+			"Turn: "		     << turn << std::endl <<
+			"Arrows: "           << player.GetArrows() << std::endl <<
+			"Current location: " << player.GetLoc() << std::endl <<
+			"Connecting rooms: " << rooms[player.GetLoc() - 1].GetConnectionOne() <<
+			", "				 << rooms[player.GetLoc() - 1].GetConnectionTwo() <<
+			", "				 << rooms[player.GetLoc() - 1].GetConnectionThree() << std::endl;
 
 		if (DangerCheck() == true)
 			std::cout << "You sense danger nearby!" << std::endl;
